@@ -31,7 +31,8 @@ body::before {
 }
 
 .scoreboard {
-    width: 800px;
+    width: 100%;
+    max-width: 800px; /* Limit maximum width for larger screens */
     position: relative;
     background-color: rgba(27, 36, 74, 0.9);
     display: flex;
@@ -45,6 +46,8 @@ body::before {
 .team {
     text-align: center;
     color: #ffffff;
+    flex: 1; /* Each team takes equal space */
+    margin: 0 10px; /* Adjust margin for spacing */
 }
 
 h2 {
@@ -52,12 +55,11 @@ h2 {
     padding: 10px 20px;
     margin-bottom: 20px;
     font-size: 40px;
-    line-height: 35.89px;
+    line-height: 1.2; /* Adjust line height for readability */
     font-weight: 700;
 }
 
 .score {
-    padding-right: 15px;
     font-size: 72px;
     font-family: 'CursedTimerUlil', Arial, sans-serif;
     background-color: #000000;
@@ -74,7 +76,8 @@ h2 {
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 10px; /* Adjust button gap */
+    margin-top: 10px; /* Add space between teams and buttons */
 }
 
 button {
@@ -96,4 +99,33 @@ button:hover {
 button:active {
     background-color: #2b3a67;
     transform: translateY(0);
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .scoreboard {
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+
+    .team {
+        margin: 10px; /* Adjust margin for smaller screens */
+    }
+
+    h2 {
+        font-size: 32px; /* Decrease font size for smaller screens */
+        padding: 8px 16px; /* Adjust padding for smaller screens */
+        margin-bottom: 10px; /* Adjust margin for smaller screens */
+    }
+
+    .score {
+        font-size: 48px; /* Decrease font size for smaller screens */
+        padding: 12px; /* Adjust padding for smaller screens */
+        margin-bottom: 10px; /* Adjust margin for smaller screens */
+        width: 100px; /* Adjust width for smaller screens */
+    }
+
+    button {
+        padding: 8px 16px; /* Adjust padding for smaller screens */
+        font-size: 14px; /* Decrease font size for smaller screens */
+    }
 }
